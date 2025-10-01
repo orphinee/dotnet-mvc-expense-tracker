@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Kategori";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Daftar Kategori</h3>
+        <div class="card-tools">
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Tambah Data
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        <table id="kategoriTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tipe</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gaji Bulanan</td>
+                    <td>income</td>
+                    <td><span class="badge badge-success">active</span></td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-info">Lihat</a>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Makan Siang</td>
+                    <td>expense</td>
+                    <td><span class="badge badge-success">active</span></td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-info">Lihat</a>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $("#kategoriTable").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+            });
+        });
+    </script>
+}

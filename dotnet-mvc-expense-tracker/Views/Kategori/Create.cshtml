@@ -1,0 +1,42 @@
+﻿@model dotnet_mvc_expense_tracker.Models.Kategori
+
+@{
+    ViewData["Title"] = "Tambah Kategori Baru";
+}
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Form Kategori</h3>
+    </div>
+    <form asp-action="Create">
+        <div class="card-body">
+            <div class="form-group">
+                <label asp-for="Tipe">Tipe</label>
+                <select asp-for="Tipe" class="form-control">
+                    <option value="">-- Pilih Tipe --</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nama">Nama</label>
+                <input asp-for="Nama" type="text" class="form-control" placeholder="Masukkan nama kategori">
+            </div>
+            <div class="form-group">
+                <label asp-for="Deskripsi">Deskripsi</label>
+                <textarea asp-for="Deskripsi" class="form-control" rows="3" placeholder="Masukkan deskripsi"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status">Status</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="active">Active</option>
+                    <option value="not active">Not Active</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a asp-action="Index" class="btn btn-secondary">Batal</a>
+        </div>
+    </form>
+</div>
